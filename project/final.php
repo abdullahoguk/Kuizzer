@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,7 +17,7 @@
 			<div class= "container">
 				<h2>You are done!</h2>
 				<p>You completed the test</p>
-				<p>Final score: 5</p>
+				<p>Final score: <?php echo $_SESSION['score']; ?></p>
 				<a href="question.php?n=1" class="start">Start Again</a>
 			</div>
 		</main>
@@ -29,3 +30,4 @@
 
 	</body>
 </html>
+<?php session_unset(); ?>

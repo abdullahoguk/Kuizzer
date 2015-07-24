@@ -24,6 +24,13 @@ input[type='text']{
 	border:1px #ccc solid;
 }
 
+input[type='number']{
+	width: 50px;
+	padding: 4px;
+	border-radius: 5px;
+	border:1px #ccc solid;
+}
+
 .container{
 	width: 60%;
 	margin: 0 auto;
@@ -31,30 +38,45 @@ input[type='text']{
 }
 
 header{
-	border-bottom: 3px #f4f4f4 solid;
+	border-bottom: 3px #272726 solid;
+	background: #3A3A36;
+	color: white;
+	
 }
 
 footer{
-	border-top: 3px #f4f4f4 solid;
+	border-top: 3px #272726 solid;
+	background: #3A3A36;
+	color: #BBBBB9;
 	text-align: center;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 main{
 	padding-bottom: 20px;
+	background: #61615E;
+	color: white;
 }
+
 
 a.start{
 	display: inline-block;
 	color: #666;
 	background: #f4f4f4;
-	border:1px dotted #ccc;
+	border-left: 7px #272726 solid;
 	padding:6px 13px;
 }
 
 .current{
 	padding:10px;
-	background: #f4f4f4;
-	border:#ccc dotted 1px;
+	background: #8D8D8B;
+	border-left: 10px #272726 solid;
 	margin: 20px 0 10px 0;
+}
+
+@media only screen and (max-width: 960px){
+	.container{
+		width: 60%;
+	}
 }

@@ -1,3 +1,33 @@
+<?php include 'database.php'; ?>
+<?php session_start(); ?>
+<?php 
+//set question number
+$number = (int) $_GET['n'];
+
+//get total number of questions
+		$query = "SELECT * FROM questions";
+		$result = mysqli_query($connection, $query) or die($mysqli_error.__LINE__);
+		$total = $result->num_rows;
+
+
+//get question
+$query = "SELECT * FROM questions
+			WHERE question_number = $number";
+//get result
+	$result = mysqli_query($connection, $query) or die($mysqli_error.__LINE__);
+	$question = mysqli_fetch_assoc($result);
+
+
+//get choices
+$query = "SELECT * FROM choices
+			WHERE question_number = $number";
+
+//get result
+	$choices = mysqli_query($connection, $query) or die($mysqli_error.__LINE__);
+	
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,16 +44,16 @@
 
 		<main>
 			<div class= "container">
-				<div class= "current">Question 1 of 5</div>
-				<p class="question">What is PHP stand for?</p>
+				<div class= "current">Question <?php echo $question['question_number']; ?> of <?php echo $total; ?></div>
+				<p class="question"><?php echo $question['text']; ?></p>
 				<form method="post" action="process.php">
 					<ul class="choices">
-					   <li><input name="choice" type="radio" value="1">PHP Hypertext Preprocessor</li>
-					   <li><input name="choice" type="radio" value="1">Private Hompage</li>
-					   <li><input name="choice" type="radio" value="1">Persona Hompage</li>
-					   <li><input name="choice" type="radio" value="1">Personal Hypertext Preprocessor</li>
+						<?php while($row = mysqli_fetch_assoc($choices)): ?>
+					   <li><input name="choice" type="radio" value="<?php echo $row['id']; ?>"><?php echo $row['text']; ?></li>
+					  <?php endwhile; ?>
 					</ul>
 					<input type="submit" value="Submit">
+					<input type="hidden" name="number" value="<?php echo $number;?>">
 				</form>
 			</div>
 		</main>
