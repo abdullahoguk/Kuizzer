@@ -36,11 +36,14 @@ $query = "SELECT * FROM choices
 	</head>
 
 	<body>
+
 		<header>
 			<div class="container">
 				<h1>KUIZZER</h1>
+				<a href="index.php" class="add">Home</a><a href="add.php" class="add">Add Question</a>
 			</div>
 		</header>
+			
 
 		<main>
 			<div class= "container">
@@ -52,7 +55,7 @@ $query = "SELECT * FROM choices
 					   <li><input name="choice" type="radio" value="<?php echo $row['id']; ?>"><?php echo $row['text']; ?></li>
 					  <?php endwhile; ?>
 					</ul>
-					<input type="submit" value="Submit">
+					<input type="submit" value="Submit"> 
 					<input type="hidden" name="number" value="<?php echo $number;?>">
 				</form>
 			</div>
@@ -60,6 +63,7 @@ $query = "SELECT * FROM choices
 
 		<footer>
 			<div class="container">
+
 				Copyright &copy; MMXV, Kuizzer
 			</div>
 		</footer>

@@ -19,6 +19,7 @@
 				<p>You completed the test</p>
 				<p>Final score: <?php echo $_SESSION['score']; ?></p>
 				<a href="question.php?n=1" class="start">Start Again</a>
+				<a href="add.php" class="add">Add Question</a>
 			</div>
 		</main>
 

@@ -28,9 +28,9 @@ $total = $results->num_rows;
 				    <li><strong>Number of questions: </strong><?php echo $total; ?></li>
 				    <li><strong>Type: </strong>Multiple Choice</li>
 				    <li><strong>Estimated time: </strong><?php echo $total * 0.75; ?> min</li>
-				    <li><strong>Number of questions </strong>5</li>
 				</ul>
 				<a href="question.php?n=1" class="start">Start Kuiz</a>
+				<a href="add.php" class="add">Add Question</a>
 
 			</div>
 		</main>

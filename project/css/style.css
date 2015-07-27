@@ -41,7 +41,15 @@ header{
 	border-bottom: 3px #272726 solid;
 	background: #3A3A36;
 	color: white;
-	
+}
+
+a.add {
+	display: inline-block;
+	color: #666;
+	background: #f4f4f4;
+	border-left: 7px #272726 solid;
+	padding:6px 13px;
+	position: right;
 }
 
 footer{
@@ -62,8 +70,8 @@ main{
 
 a.start{
 	display: inline-block;
-	color: #666;
-	background: #f4f4f4;
+	color: #000000;
+	background: #99CC00;
 	border-left: 7px #272726 solid;
 	padding:6px 13px;
 }
